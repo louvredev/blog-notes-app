@@ -8,6 +8,7 @@ const LINKS = [
   { href: "/notes/new", label: "New Note" },
   { href: "/about", label: "About" },
   { href: "/health", label: "Health" },
+  { href: "/playground", label: "Playground" },
 ];
 
 export default function Nav() {

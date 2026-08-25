@@ -11,13 +11,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-[var(--color-surface-muted)] text-[var(--color-foreground)] font-sans">
-        <Nav />
-        <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-8">
-          {children}
-        </main>
-        <footer className="border-t border-[var(--color-border)] py-6 text-center text-xs text-slate-400">
-          Built with Next.js · Deployed on Vercel
-        </footer>
+        <div id="app-root" className="flex min-h-full flex-1 flex-col">
+          <Nav />
+          <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-8">
+            {children}
+          </main>
+          <footer className="border-t border-[var(--color-border)] py-6 text-center text-xs text-slate-400">
+            Built with Next.js · Deployed on Vercel
+          </footer>
+        </div>
       </body>
     </html>
   );

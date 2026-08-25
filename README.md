@@ -50,10 +50,28 @@ git-ignored — never commit real secrets. Add the same keys in
 5. Add any env vars from `.env.example` under Project Settings before they're
    needed by a feature.
 
+## Accessible component playground
+
+`playground/` has three components built from scratch against the W3C ARIA
+Authoring Practices patterns — no component libraries:
+
+- `Modal.tsx` — dialog pattern (focus trap, focus return, Escape to close)
+- `Tabs.tsx` — tabs pattern (roving tabindex, arrow key navigation)
+- `Disclosure.tsx` — disclosure pattern (native button, aria-expanded)
+
+See them live at `/playground` after `npm run dev`. Test keyboard-only:
+Tab / Shift+Tab, Escape, and Arrow keys where the pattern calls for them.
+
+To compare against shadcn/ui's implementations (see `NOTES.md`):
+
+```bash
+npx shadcn@latest init -d
+npx shadcn@latest add dialog tabs
+```
+
 ## Data layer
 
 `lib/notes.ts` currently returns static in-memory data behind an async
 function, so it already looks like a real fetch call. Swapping in a real
 database later (Postgres, Supabase, etc.) means only this file changes —
 no page component needs to be touched.
-# blog-notes-app
